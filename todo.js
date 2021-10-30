@@ -52,8 +52,11 @@ function removeTodo(e) {
 }
 
 function removeAllTodos() {
+  const listItems = document.querySelectorAll(".list-element");
   if (confirm("Are you sure?")) {
-    list.remove();
+    listItems.forEach(function (li) {
+      li.remove();
+    });
     localStorage.removeItem("todos");
   }
 }
