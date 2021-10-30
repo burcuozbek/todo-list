@@ -1,9 +1,9 @@
 const input = document.querySelector("#input");
-const button = document.querySelector("#button");
 const list = document.querySelector(".list");
 const clearAll = document.querySelector("#clear-all");
 const searchInput = document.getElementById("search");
-button.addEventListener("click", addTodo);
+const form = document.getElementById("form");
+form.addEventListener("submit", addTodo);
 list.addEventListener("click", removeTodo);
 clearAll.addEventListener("click", removeAllTodos);
 document.addEventListener("DOMContentLoaded", loadAllToUI);

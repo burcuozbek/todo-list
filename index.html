@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo Custom</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="form">
-      <input id="input" type="text" />
-      <button id="button" type="submit">Add Todo</button>
+    <div class="container">
+      <form id="form" class="form">
+        <input
+          autocomplete="off"
+          placeholder="Add Todo"
+          id="input"
+          type="text"
+          class="add-todo"
+        />
+        <i class="fas fa-ice-cream ice-cream"></i>
+      </form>
+
+      <ul class="list"></ul>
+      <input id="search" type="text" />
+      <button id="clear-all">Clear All Todos</button>
     </div>
-    <ul class="list"></ul>
-    <input id="search" type="text" />
-    <br />
-    <br />
-    <button id="clear-all">Clear All Todos</button>
+
     <script src="todo.js"></script>
   </body>
 </html>
