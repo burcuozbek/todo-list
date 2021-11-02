@@ -33,14 +33,17 @@ input {
   border-radius: var(--radius-input);
   padding: 0 0.5rem;
 }
+
 input::placeholder {
   color: var(--placeholder-color);
   opacity: 0.3;
   padding: 0 0.1rem;
 }
+
 input:focus {
   outline: 0;
 }
+
 /* ============================= */
 .container {
   background: var(--todo-container-color);
@@ -52,7 +55,8 @@ input:focus {
   justify-content: flex-start;
   border-radius: var(--radius-main);
 }
-.container .form {
+.container .form,
+.container .bottom {
   margin: 1rem;
 }
 .container .form::before {
@@ -70,4 +74,16 @@ input:focus {
 .container .form .ice-cream {
   position: absolute;
   top: 0;
+}
+/* BOTTOM */
+
+.container .bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .bottom #clear-all {
+  margin-top: 2rem;
+  border-radius: var(--radius-input);
+  height: 32px;
 }
