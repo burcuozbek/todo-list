@@ -13,22 +13,30 @@
   </head>
   <body>
     <div class="container">
-      <form id="form" class="form">
-        <input
-          autocomplete="off"
-          placeholder="Add Todo"
-          id="input"
-          type="text"
-          class="add-todo"
-        />
-        <i class="fas fa-ice-cream ice-cream"></i>
-      </form>
+      <div class="left">
+        <form id="form" class="form">
+          <div class="input-area">
+            <input
+              autocomplete="off"
+              placeholder="Add Todo"
+              id="input"
+              type="text"
+              class="add-todo"
+            />
+            <i class="fas fa-ice-cream ice-cream"></i>
+          </div>
+        </form>
+        <div class="bottom">
+          <div class="search-area">
+            <input id="search" type="text" placeholder="Search Todo" />
+            <i class="fas fa-search"></i>
+          </div>
+          <button id="clear-all">Clear All Todos</button>
+        </div>
+      </div>
 
-      <ul class="list"></ul>
-      <div class="bottom">
-        <input id="search" type="text" /><button id="clear-all">
-          Clear All Todos
-        </button>
+      <div class="right">
+        <ul class="list"></ul>
       </div>
     </div>
 
