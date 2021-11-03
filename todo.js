@@ -3,6 +3,9 @@ const list = document.querySelector(".list");
 const clearAll = document.querySelector("#clear-all");
 const searchInput = document.getElementById("search");
 const form = document.getElementById("form");
+const addBtn = document.getElementById("add-button");
+const alertCont = document.querySelector(".alert-container");
+addBtn.addEventListener("click", addTodo);
 form.addEventListener("submit", addTodo);
 list.addEventListener("click", removeTodo);
 clearAll.addEventListener("click", removeAllTodos);
@@ -21,8 +24,9 @@ function addTodo(e) {
     const value = input.value.trim();
     setStorageData(value);
     addTodoToUI(value);
+    showAlert("alert-success", "Added successfully!");
   } else {
-    alert("Please write any word!");
+    showAlert("alert-error", "Please write any word!");
   }
 }
 
@@ -47,6 +51,7 @@ function removeTodo(e) {
   if (e.target.id === "remove") {
     e.target.parentElement.remove();
     removeTodoFromStorage(e.target.parentElement.firstChild.textContent);
+    showAlert("alert-success", "Todo removed successfully!");
   }
 }
 
@@ -57,6 +62,7 @@ function removeAllTodos() {
       li.remove();
     });
     localStorage.removeItem("todos");
+    showAlert("", "All todos are removed successfully!");
   }
 }
 
@@ -97,4 +103,15 @@ function searchTodo(e) {
       li.setAttribute("style", "display:block !important");
     }
   });
+}
+function showAlert(className, message) {
+  const divElement = document.createElement("div");
+  const pElement = document.createElement("p");
+  divElement.className = `alert ${className}`;
+  pElement.innerHTML = message;
+  divElement.appendChild(pElement);
+  alertCont.appendChild(divElement);
+  setTimeout(function () {
+    divElement.remove();
+  }, 2000);
 }

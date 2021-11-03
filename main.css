@@ -19,6 +19,8 @@
   );
   --placeholder-color: #8525df60;
   --color-white: #fff;
+  --color-alert-success: rgb(72, 175, 153);
+  --color-alert-error: rgba(255, 0, 0, 0.658);
   --todos-background-color: linear-gradient(
     to right,
     rgb(27, 201, 186),
@@ -41,19 +43,19 @@ html {
   align-items: center;
   justify-content: center;
   font-family: var(--main-font);
+  position: relative;
 }
 /* =============== Global =============== */
 input {
   height: 32px;
+
   border: none;
   border-radius: var(--radius-input);
-  padding: 0 0.5rem;
+  padding: 0 2rem;
 }
 
 input::placeholder {
   color: var(--placeholder-color);
-
-  padding: 0 0.1rem;
 }
 
 input:focus {
@@ -61,6 +63,39 @@ input:focus {
 }
 
 /* ============================= */
+/* =====================ALERTS================= */
+.alert-container {
+  width: 200px;
+
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.alert-container .alert {
+  width: 100%;
+  height: 100px;
+  background: var(--placeholder-color);
+  margin: 10px 0;
+  border-radius: var(--radius-input);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: center;
+}
+.alert-container .alert.alert-success {
+  background: var(--color-alert-success);
+}
+.alert-container .alert.alert-error {
+  background: var(--color-alert-error);
+}
+.alert-container .alert p {
+  font-size: 12px;
+  color: var(--color-white);
+  letter-spacing: 2px;
+  max-width: 100px;
+}
+
+/* ============================================= */
 .container {
   background: var(--main-background-color);
   height: 500px;
@@ -141,7 +176,7 @@ input:focus {
   color: var(--todos-background-color);
 }
 /*====================LEFT=====================*/
-/* ===============RIGHT================ */
+/* ==================RIGHT==================== */
 .container .right {
   flex: 1;
   width: 100%;
